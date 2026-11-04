@@ -450,6 +450,26 @@
         }
       }, 700);
     }
+
+    // Auto-detect OAuth redirect code from TikTok
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get('code');
+      const state = params.get('state');
+      if (code) {
+        authorizeApp();
+        const banner = document.createElement('div');
+        banner.className = 'bg-emerald-600 text-white px-4 py-3 text-center text-xs font-bold shadow-lg flex items-center justify-center gap-3 sticky top-16 z-50';
+        banner.innerHTML = `
+          <span>🎉 TikTok Authorization Code Received: <code class="bg-black/40 px-2 py-0.5 rounded font-mono">${code.slice(0, 10)}...</code></span>
+          <button onclick="navigator.clipboard.writeText('${code}'); this.textContent='Copied!';" class="bg-white text-emerald-800 px-3 py-1 rounded text-[11px] font-bold">Copy Code</button>
+        `;
+        document.body.prepend(banner);
+        
+        // Attempt redirect to local dev callback if running
+        fetch('http://localhost:3000/oauth/tiktok/callback?code=' + encodeURIComponent(code) + '&state=' + encodeURIComponent(state || ''), { mode: 'no-cors' }).catch(() => {});
+      }
+    });
   </script>
 </body>
 </html>
