@@ -1,0 +1,31 @@
+privacy-policy.html
+  698ac31901cd73e0 4-6
+tiktok-developers-site-verification.txt
+  698ac31901cd73e0 1
+index.html
+  698ac31901cd73e0 5-7
+tiktok2rLOWQlFRcPpDexobpiwIiz8S4nLNjhR.txt
+  698ac31901cd73e0 1
+terms-of-service.html
+  698ac31901cd73e0 4-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23",
+  "base_commit_sha": "3fde34a057418a8630c38af37fe261130a2532d1",
+  "prompts": {
+    "698ac31901cd73e0": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "a4b65591-83d1-4935-8a2a-296ff3ee5e38",
+        "model": "unknown"
+      },
+      "human_author": "ramadhani.musthofa <ramadhani.musthofa@gdn-commerce.com>",
+      "messages": [],
+      "total_additions": 11,
+      "total_deletions": 10,
+      "accepted_lines": 11,
+      "overriden_lines": 0
+    }
+  }
+}
