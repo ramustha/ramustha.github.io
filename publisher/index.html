@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zayn Storybook Studio & Publisher - TikTok Integration</title>
+  <meta name="tiktok-developers-site-verification" content="2rLOWQlFRcPpDexobpiwIiz8S4nLNjhR" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 2s infinite ease-in-out;
+    }
+    .tiktok-black {
+      background-color: #010101;
+    }
+    .tiktok-cyan {
+      color: #25F4EE;
+    }
+    .tiktok-red {
+      color: #FE2C55;
+    }
+    .gradient-tiktok {
+      background: linear-gradient(135deg, #FE2C55 0%, #25F4EE 100%);
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-rose-500 selection:text-white">
+
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-rose-500 flex items-center justify-center shadow-lg shadow-rose-500/20 font-bold text-white text-lg">
+          📖
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="font-bold text-lg tracking-tight text-white">Zayn Storybook Studio</span>
+            <span class="text-xs bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-2 py-0.5 rounded-full font-medium">Publisher v1.2</span>
+          </div>
+          <p class="text-xs text-slate-400">Automated Multi-Platform Children's Storybook Publisher</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2 text-xs text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Domain: <strong class="text-slate-200">ramustha.github.io</strong></span>
+        </div>
+        <div id="nav-user-badge" class="hidden flex items-center space-x-2 text-xs bg-slate-800 text-slate-200 px-3 py-1.5 rounded-full border border-slate-700">
+          <div class="w-5 h-5 rounded-full bg-gradient-to-br from-rose-400 to-purple-600 flex items-center justify-center text-[10px] font-bold text-white">Z</div>
+          <span class="font-medium">@zayn.storybook</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Demo Notice Banner -->
+  <div class="bg-indigo-950/60 border-b border-indigo-900/50 py-2 text-center text-xs text-indigo-300 px-4">
+    <span class="font-semibold text-white">TikTok Developer Integration Demo:</span> Demonstrating 
+    <span class="bg-indigo-500/20 px-1.5 py-0.5 rounded border border-indigo-500/30 font-mono text-[11px] text-white">Login Kit (user.info.basic)</span> and 
+    <span class="bg-rose-500/20 px-1.5 py-0.5 rounded border border-rose-500/30 font-mono text-[11px] text-white">Content Posting API (video.publish)</span>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+      <!-- Left Column: Video Preview & Episode Details -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-xl p-5">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-bold text-slate-200 flex items-center space-x-2">
+              <i class="fa-solid fa-film text-rose-400 text-sm"></i>
+              <span>Episode Video Asset</span>
+            </h2>
+            <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-medium">
+              Ready (1080x1920 • 9:16)
+            </span>
+          </div>
+
+          <!-- Video Mock Frame -->
+          <div class="relative aspect-[9/16] bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-inner group">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-10 pointer-events-none"></div>
+            
+            <!-- Video Canvas Background Simulation -->
+            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center relative bg-gradient-to-b from-amber-700/30 via-slate-900 to-slate-950">
+              <div class="w-24 h-24 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center mb-4 text-5xl shadow-lg">
+                🐱
+              </div>
+              <h3 class="font-bold text-white text-lg leading-tight mb-1">Gara-gara Kucing</h3>
+              <p class="text-xs text-amber-200/80 mb-3 font-medium">Kucing Oren Nyangkut di Pohon</p>
+              <div class="flex items-center space-x-2 text-[11px] text-slate-400 bg-slate-950/80 px-3 py-1 rounded-full border border-slate-800">
+                <span>Remotion Engine</span> • <span>00:45</span> • <span>Audio Ducking ON</span>
+              </div>
+            </div>
+
+            <!-- Overlay Play Controls -->
+            <div class="absolute inset-0 flex items-center justify-center z-20">
+              <button class="w-14 h-14 rounded-full bg-rose-500/90 text-white flex items-center justify-center shadow-xl hover:scale-105 transition-all">
+                <i class="fa-solid fa-play text-xl ml-1"></i>
+              </button>
+            </div>
+
+            <!-- TikTok Overlay Preview -->
+            <div class="absolute bottom-4 left-4 right-16 z-20 text-white pointer-events-none">
+              <p class="font-bold text-sm">@zayn.storybook</p>
+              <p class="text-xs text-slate-200 mt-1 line-clamp-2">Kucing Oren Nyangkut di Pohon! 🐱 Cerita seru Zayn menyelamatkan kucing oren...</p>
+              <p class="text-[11px] text-rose-300 mt-1">#ceritaanak #dongeng #edukasianak</p>
+            </div>
+
+            <!-- TikTok Right Action Buttons Simulation -->
+            <div class="absolute bottom-6 right-3 z-20 flex flex-col items-center space-y-4 text-white text-xs">
+              <div class="flex flex-col items-center">
+                <div class="w-9 h-9 rounded-full bg-slate-800/80 backdrop-blur flex items-center justify-center text-rose-400 text-sm"><i class="fa-solid fa-heart"></i></div>
+                <span class="text-[10px] mt-1 font-medium">12.4K</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-9 h-9 rounded-full bg-slate-800/80 backdrop-blur flex items-center justify-center text-slate-200 text-sm"><i class="fa-solid fa-comment-dots"></i></div>
+                <span class="text-[10px] mt-1 font-medium">348</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-9 h-9 rounded-full bg-slate-800/80 backdrop-blur flex items-center justify-center text-slate-200 text-sm"><i class="fa-solid fa-share"></i></div>
+                <span class="text-[10px] mt-1 font-medium">1.2K</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/60 pt-3">
+            <span>Rendered at: <strong class="text-slate-300">1080x1920 (9:16)</strong></span>
+            <span>Duration: <strong class="text-slate-300">45s</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: TikTok Integration Workflow -->
+      <div class="lg:col-span-7 space-y-6">
+
+        <!-- Step 1: Login Kit Authorization -->
+        <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 shadow-xl relative overflow-hidden">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-black border border-slate-700 flex items-center justify-center text-white">
+                <i class="fa-brands fa-tiktok text-sm"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">1. Connect TikTok Account</h3>
+                <p class="text-xs text-slate-400">Powered by <strong>TikTok Login Kit</strong></p>
+              </div>
+            </div>
+            <span id="login-status-pill" class="text-xs bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full font-medium">
+              Disconnected
+            </span>
+          </div>
+
+          <!-- Disconnected State -->
+          <div id="auth-unconnected-view" class="py-6">
+            <p class="text-sm text-slate-300 mb-4">
+              Authorize Zayn Storybook Publisher to access your TikTok creator account. This uses the <code class="bg-slate-900 px-2 py-0.5 rounded text-rose-400 text-xs">user.info.basic</code> scope to display your channel identity and verify your account.
+            </p>
+            <button id="btn-login-tiktok" onclick="openOAuthModal()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-black hover:bg-slate-900 border border-slate-700 text-white font-semibold text-sm flex items-center justify-center space-x-3 transition-all hover:border-slate-500 shadow-lg">
+              <i class="fa-brands fa-tiktok text-lg text-rose-500"></i>
+              <span>Log in with TikTok</span>
+            </button>
+          </div>
+
+          <!-- Connected State (Initially Hidden) -->
+          <div id="auth-connected-view" class="hidden py-4">
+            <div class="flex items-center justify-between bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rose-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg shadow-md border-2 border-white/20">
+                  Z
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <h4 class="font-bold text-white text-sm">Zayn Storybook</h4>
+                    <span class="text-emerald-400 text-xs"><i class="fa-solid fa-circle-check"></i></span>
+                  </div>
+                  <p class="text-xs text-slate-400">@zayn.storybook</p>
+                  <div class="flex items-center space-x-2 mt-1">
+                    <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">Scope: user.info.basic</span>
+                    <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">Scope: video.publish</span>
+                  </div>
+                </div>
+              </div>
+              <button onclick="disconnectAccount()" class="text-xs text-slate-400 hover:text-rose-400 border border-slate-700 hover:border-rose-500/40 px-3 py-1.5 rounded-lg transition-colors">
+                Disconnect
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Content Posting API Form -->
+        <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 shadow-xl space-y-5">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                <i class="fa-solid fa-cloud-arrow-up text-sm"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">2. Publish via Content Posting API</h3>
+                <p class="text-xs text-slate-400">Requires <code class="bg-slate-900 px-1.5 py-0.5 rounded text-rose-400 text-[11px]">video.publish</code> scope</p>
+              </div>
+            </div>
+            <span class="text-xs bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 px-2.5 py-1 rounded-full font-medium">
+              API v2
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Video Caption Input -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2">Video Caption & Hashtags</label>
+              <textarea id="post-caption" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-rose-500 transition-colors resize-none">Kucing Oren Nyangkut di Pohon! 🐱 Cerita seru Zayn menyelamatkan si Oren. #ceritaanak #dongeng #edukasianak #kartunanak</textarea>
+            </div>
+
+            <!-- Privacy & Permissions Settings -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Privacy Level</label>
+                <select class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-rose-500">
+                  <option selected>PUBLIC_TO_EVERYONE</option>
+                  <option>MUTUAL_FOLLOW_FRIENDS</option>
+                  <option>SELF_ONLY (Private Draft)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Allowed Interactions</label>
+                <div class="flex items-center space-x-3 pt-2 text-xs text-slate-300">
+                  <label class="flex items-center space-x-1.5 cursor-pointer">
+                    <input type="checkbox" checked class="rounded bg-slate-800 border-slate-700 text-rose-500 focus:ring-0">
+                    <span>Comment</span>
+                  </label>
+                  <label class="flex items-center space-x-1.5 cursor-pointer">
+                    <input type="checkbox" checked class="rounded bg-slate-800 border-slate-700 text-rose-500 focus:ring-0">
+                    <span>Duet</span>
+                  </label>
+                  <label class="flex items-center space-x-1.5 cursor-pointer">
+                    <input type="checkbox" checked class="rounded bg-slate-800 border-slate-700 text-rose-500 focus:ring-0">
+                    <span>Stitch</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Progress Bar Box (Shown During Upload) -->
+            <div id="upload-progress-box" class="hidden bg-slate-900/90 rounded-xl p-4 border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span id="progress-status-text" class="text-slate-300 font-medium">Initializing Content Posting API session...</span>
+                <span id="progress-percent" class="text-rose-400 font-bold font-mono">0%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                <div id="progress-bar-fill" class="bg-gradient-to-r from-rose-500 to-indigo-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
+              <div class="text-[11px] text-slate-400 flex items-center space-x-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping"></span>
+                <span>Endpoint: <code class="text-slate-300">POST /v2/post/publish/video/init/</code></span>
+              </div>
+            </div>
+
+            <!-- Success Alert Box (Shown After Upload) -->
+            <div id="upload-success-box" class="hidden bg-emerald-950/40 border border-emerald-500/40 rounded-xl p-4 space-y-2">
+              <div class="flex items-center space-x-2 text-emerald-400 font-bold text-sm">
+                <i class="fa-solid fa-circle-check text-base"></i>
+                <span>Video Successfully Published to TikTok!</span>
+              </div>
+              <p class="text-xs text-slate-300">
+                The educational story episode is now live on <strong class="text-white">@zayn.storybook</strong>. Post ID: <code class="font-mono text-emerald-300 bg-emerald-950/80 px-1.5 py-0.5 rounded">v_publish_739281048291</code>.
+              </p>
+            </div>
+
+            <!-- Action Button -->
+            <div class="pt-2">
+              <button id="btn-publish-tiktok" onclick="handlePublish()" class="w-full py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-rose-500 to-indigo-600 hover:from-rose-600 hover:to-indigo-700 text-white shadow-lg shadow-rose-500/20 flex items-center justify-center space-x-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Publish to TikTok (video.publish)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- TikTok OAuth 2.0 Consent Modal Simulation -->
+  <div id="oauth-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+    <div class="bg-slate-900 border border-slate-700 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Modal Header -->
+      <div class="bg-slate-950 px-6 py-5 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <i class="fa-brands fa-tiktok text-xl text-white"></i>
+          <span class="font-bold text-white text-base tracking-tight">TikTok for Developers</span>
+        </div>
+        <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">OAuth 2.0</span>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-5">
+        <div class="text-center space-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-rose-500 mx-auto flex items-center justify-center text-2xl shadow-lg shadow-rose-500/20 mb-3">
+            📖
+          </div>
+          <h3 class="font-bold text-white text-base">Zayn Storybook Publisher</h3>
+          <p class="text-xs text-slate-400">wants to access your TikTok Account (<span class="text-slate-200 font-medium">@zayn.storybook</span>)</p>
+        </div>
+
+        <div class="bg-slate-950/80 rounded-xl p-4 border border-slate-800 space-y-3">
+          <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider text-[10px]">Permissions Requested:</div>
+          
+          <!-- Scope 1 -->
+          <div class="flex items-start space-x-3 text-xs">
+            <div class="w-5 h-5 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-[10px]"></i>
+            </div>
+            <div>
+              <p class="font-medium text-slate-200">Access your public profile info</p>
+              <p class="text-[11px] text-slate-400 font-mono">Scope: user.info.basic</p>
+            </div>
+          </div>
+
+          <!-- Scope 2 -->
+          <div class="flex items-start space-x-3 text-xs">
+            <div class="w-5 h-5 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-[10px]"></i>
+            </div>
+            <div>
+              <p class="font-medium text-slate-200">Publish videos directly to your feed</p>
+              <p class="text-[11px] text-slate-400 font-mono">Scope: video.publish</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-slate-400 text-center">
+          By clicking <strong>Authorize</strong>, you allow this app to access your profile and post videos in accordance with its 
+          <a href="https://ramustha.github.io/privacy-policy.html" target="_blank" class="text-indigo-400 underline">Privacy Policy</a> and 
+          <a href="https://ramustha.github.io/terms-of-service.html" target="_blank" class="text-indigo-400 underline">Terms of Service</a>.
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="bg-slate-950 px-6 py-4 border-t border-slate-800 flex items-center justify-end space-x-3">
+        <button onclick="closeOAuthModal()" class="px-4 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">
+          Cancel
+        </button>
+        <button id="btn-oauth-authorize" onclick="authorizeApp()" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-rose-500 hover:bg-rose-600 text-white shadow-lg shadow-rose-500/30 transition-all flex items-center space-x-2">
+          <i class="fa-solid fa-check"></i>
+          <span>Authorize</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-4 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2026 Zayn Storybook. All rights reserved.</p>
+      <div class="flex items-center space-x-4">
+        <a href="https://ramustha.github.io/privacy-policy.html" class="hover:text-slate-400">Privacy Policy</a>
+        <span>•</span>
+        <a href="https://ramustha.github.io/terms-of-service.html" class="hover:text-slate-400">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script>
+    let isConnected = false;
+
+    function openOAuthModal() {
+      document.getElementById('oauth-modal').classList.remove('hidden');
+    }
+
+    function closeOAuthModal() {
+      document.getElementById('oauth-modal').classList.add('hidden');
+    }
+
+    function authorizeApp() {
+      closeOAuthModal();
+      isConnected = true;
+      document.getElementById('auth-unconnected-view').classList.add('hidden');
+      document.getElementById('auth-connected-view').classList.remove('hidden');
+      document.getElementById('nav-user-badge').classList.remove('hidden');
+      
+      const pill = document.getElementById('login-status-pill');
+      pill.textContent = 'Connected: @zayn.storybook';
+      pill.className = 'text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full font-medium';
+    }
+
+    function disconnectAccount() {
+      isConnected = false;
+      document.getElementById('auth-unconnected-view').classList.remove('hidden');
+      document.getElementById('auth-connected-view').classList.add('hidden');
+      document.getElementById('nav-user-badge').classList.add('hidden');
+
+      const pill = document.getElementById('login-status-pill');
+      pill.textContent = 'Disconnected';
+      pill.className = 'text-xs bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full font-medium';
+    }
+
+    function handlePublish() {
+      if (!isConnected) {
+        openOAuthModal();
+        return;
+      }
+
+      const publishBtn = document.getElementById('btn-publish-tiktok');
+      const progressBox = document.getElementById('upload-progress-box');
+      const successBox = document.getElementById('upload-success-box');
+      const progressBar = document.getElementById('progress-bar-fill');
+      const progressPercent = document.getElementById('progress-percent');
+      const progressText = document.getElementById('progress-status-text');
+
+      publishBtn.disabled = true;
+      successBox.classList.add('hidden');
+      progressBox.classList.remove('hidden');
+      progressBar.style.width = '0%';
+      progressPercent.textContent = '0%';
+
+      const steps = [
+        { pct: 20, text: 'Calling TikTok Content Posting API (/v2/post/publish/video/init/)...' },
+        { pct: 50, text: 'Streaming video binary chunks to TikTok storage...' },
+        { pct: 85, text: 'Verifying video transcoding and permissions on TikTok...' },
+        { pct: 100, text: 'Video publish confirmed! Fetching live status...' }
+      ];
+
+      let currentStep = 0;
+      const interval = setInterval(() => {
+        if (currentStep < steps.length) {
+          const step = steps[currentStep];
+          progressBar.style.width = step.pct + '%';
+          progressPercent.textContent = step.pct + '%';
+          progressText.textContent = step.text;
+          currentStep++;
+        } else {
+          clearInterval(interval);
+          setTimeout(() => {
+            progressBox.classList.add('hidden');
+            successBox.classList.remove('hidden');
+            publishBtn.disabled = false;
+          }, 600);
+        }
+      }, 700);
+    }
+  </script>
+</body>
+</html>
